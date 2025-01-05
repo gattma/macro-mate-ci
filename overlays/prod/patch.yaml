@@ -7,7 +7,7 @@ spec:
     spec:
       containers:
         - name: macro-mate
-          image: ghcr.io/gattma/macro-mate:v0.1
+          image: ghcr.io/gattma/macro-mate:main-8820492
           resources:
             limits:
               memory: "512Mi"

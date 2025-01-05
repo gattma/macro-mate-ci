@@ -1,0 +1,16 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: macro-mate
+spec:
+  template:
+    spec:
+      containers:
+        - name: macro-mate
+          image: ghcr.io/gattma/macro-mate:v0.1
+          resources:
+            limits:
+              memory: "512Mi"
+            requests:
+              cpu: "50m"
+              memory: "128Mi"

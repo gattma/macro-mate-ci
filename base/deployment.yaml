@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: macro-mate
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: macro-mate
+  template:
+    metadata:
+      labels:
+        app: macro-mate
+    spec:
+      containers:
+      - name: macro-mate
+        image: ghcr.io/gattma/macro-mate:latest
+        ports:
+        - containerPort: 8080
+        env:
+        - name: MONGODB_URL
+          value: "mongodb://macro-mate-mongodb-headless"
+        - name: SERVER_PORT
+          value: "8080"
+        - name: DB_NAME
+          value: "off"
+        - name: COLLECTION
+          value: "products"
+        - name: APP_NAME
+          value: "macro-mate"
